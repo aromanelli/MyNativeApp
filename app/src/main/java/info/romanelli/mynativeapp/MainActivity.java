@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
         // Example of a call to a native method
         TextView tv = findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
+
+        TextView tv2 = findViewById(R.id.sample_text2);
+        tv2.setText(calculateArea(5.5f));
     }
 
     /**
@@ -27,4 +30,6 @@ public class MainActivity extends AppCompatActivity {
      * which is packaged with this application.
      */
     public native String stringFromJNI();
+
+    private native String calculateArea(double radius);
 }
